@@ -1,0 +1,30 @@
+{
+	"name": "gitweb",
+	"version": "1.0.0",
+	"description": "A git web UI project —— SPA",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Ranjay Zheng",
+	"license": "ISC",
+	"devDependencies": {
+		"babel-core": "^6.26.3",
+		"babel-plugin-transform-decorators-legacy": "^1.3.5",
+		"babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+		"gulp": "^3.9.1",
+		"gulp-babel": "^7.0.1",
+		"pump": "^3.0.0"
+	},
+	"dependencies": {
+		"awilix": "^3.0.8",
+		"awilix-koa": "^2.1.1",
+		"co": "^4.6.0",
+		"koa": "^2.5.1",
+		"koa-router": "^7.4.0",
+		"koa-static": "^4.0.3",
+		"koa-swig": "^2.2.1",
+		"log4js": "^2.8.0",
+		"shelljs": "^0.8.2"
+	}
+}
