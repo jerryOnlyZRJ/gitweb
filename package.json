@@ -48,6 +48,7 @@
 		"log4js": "^2.8.0",
 		"shelljs": "^0.8.2",
 		"vue": "^2.5.16",
+		"vue-router": "^3.0.1",
 		"vue-template-compiler": "^2.5.16"
 	}
 }

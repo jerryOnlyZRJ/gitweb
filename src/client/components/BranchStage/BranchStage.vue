@@ -46,8 +46,11 @@ export default {
 </script>
 
 <style scoped>
+  ul li {
+    list-style: none;
+  }
   .branch-stage {
-    flex: 1;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -101,22 +104,5 @@ export default {
     color: red;
     font-size: 1.5rem;
     font-weight: bold;
-  }
-  .btn {
-    display: block;
-    width: 8rem;
-    height: 3rem;
-    margin: 1rem;
-    border: none;
-    border-radius: 10px;
-    font-size: 2rem;
-    cursor: pointer;
-    color: #fff;
-    background: #188eee;
-    outline: none;
-    transition: background .5s;
-  }
-  .btn:hover {
-    background: #0364b3;
   }
 </style>

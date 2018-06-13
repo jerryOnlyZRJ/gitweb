@@ -16,11 +16,12 @@ const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 module.exports = {
+  mode: 'development',
   entry: path.join(__dirname, './src/client/app.js'),
   output: {
-    path: path.join(__dirname, './dist'),
+    path: path.join(__dirname, './dist/assets'),
     publicPath: '/',
-    filename: 'assets/scripts/[name].js'
+    filename: 'scripts/[name].bundle.js'
   },
   optimization: {
     minimizer: [
@@ -31,6 +32,9 @@ module.exports = {
       }),
       new OptimizeCSSAssetsPlugin({})
     ]
+  },
+  resolve: {
+    extensions: [".js", ".css", ".vue"]
   },
   module: {
     rules: [{
@@ -49,8 +53,6 @@ module.exports = {
       // css-loader
       test: /\.css$/,
       use: [
-        process.env.NODE_ENV !== 'production' ?
-        'vue-style-loader' :
         MiniCssExtractPlugin.loader, {
           loader: 'css-loader',
           options: {
@@ -71,7 +73,7 @@ module.exports = {
       use: [{
         loader: 'file-loader',
         options: {
-          name: 'assets/images/[name]-[hash:5].[ext]'
+          name: 'images/[name]-[hash:5].[ext]'
         }
       }]
     }]
@@ -81,10 +83,10 @@ module.exports = {
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       template: 'src/client/index.html',
-      filename: 'assets/index.html'
+      filename: 'index.html'
     }),
     new MiniCssExtractPlugin({
-      filename: 'assets/styles/[name]-[hash:5].css',
+      filename: 'styles/[name]-[hash:5].css',
       chunkFilename: "[id].css"
     }),
     new CleanWebpackPlugin('dist/assets/*', {
